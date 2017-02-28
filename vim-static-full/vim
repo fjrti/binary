@@ -1,0 +1,4 @@
+#!/bin/bash
+export current_d=$(dirname "$(readlink -f "$0")")
+export VIMRUNTIME="$current_d/runtime/system"
+exec "$current_d/bin/vim" -u $current_d/runtime/vimrc "$@"
