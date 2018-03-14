@@ -1,0 +1,11 @@
+[Unit]
+Description=httpterm
+After=auditd.service systemd-user-sessions.service time-sync.target
+
+[Service]
+EnvironmentFile=/root/httpterm-s
+ExecStart=/root/httpterm-s -f /root/httpterm.cfg
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
